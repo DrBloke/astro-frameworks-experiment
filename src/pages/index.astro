@@ -1,14 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ReactIncrementDecrement from "../reactComponents/IncrementDecrement.tsx";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Frameworks demo">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<h1><span class="text-gradient">Frameworks demo</span></h1>
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			To get started, open the directory <code>src/pages</code> in your project.<br
+			/>
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
+			above.
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -32,6 +35,8 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		<h2>React component</h2>
+		<ReactIncrementDecrement client:load />
 	</main>
 </Layout>
 
