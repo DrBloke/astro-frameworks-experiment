@@ -3,11 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ReactIncrementDecrement from "../components/react/ReactIncrementDecrement.tsx";
 import SvelteIncrementDecrement from "../components/svelte/SvelteIncrementDecrement.svelte";
+import Hello from "../components/elm/Hello.elm";
+// import Counter from "../components/elm/Counter.elm";
 ---
 
 <Layout title="Frameworks demo">
 	<main>
-		<h1><span class="text-gradient">Frameworks demo</span></h1>
+		<!-- <h1><span class="text-gradient">Frameworks demo</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br
 			/>
@@ -35,11 +37,14 @@ import SvelteIncrementDecrement from "../components/svelte/SvelteIncrementDecrem
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
-		</ul>
+		</ul> -->
 		<h2>React component</h2>
 		<ReactIncrementDecrement client:load />
 		<h2>Svelte component</h2>
 		<SvelteIncrementDecrement client:only="svelte" />
+		<h2>Elm component</h2>
+		<!-- <Counter client:load count={99} /> -->
+		<Hello />
 	</main>
 </Layout>
 
