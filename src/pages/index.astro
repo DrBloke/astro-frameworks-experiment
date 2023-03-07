@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import ReactIncrementDecrement from "../reactComponents/IncrementDecrement.tsx";
+import ReactIncrementDecrement from "../components/react/ReactIncrementDecrement.tsx";
+import SvelteIncrementDecrement from "../components/svelte/SvelteIncrementDecrement.svelte";
 ---
 
 <Layout title="Frameworks demo">
@@ -37,6 +38,8 @@ import ReactIncrementDecrement from "../reactComponents/IncrementDecrement.tsx";
 		</ul>
 		<h2>React component</h2>
 		<ReactIncrementDecrement client:load />
+		<h2>Svelte component</h2>
+		<SvelteIncrementDecrement client:only="svelte" />
 	</main>
 </Layout>
 
