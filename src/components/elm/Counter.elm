@@ -3,34 +3,27 @@ module Counter exposing (main)
 import Browser
 import Html exposing (button, div, text, Html)
 import Html.Events exposing (onClick)
-import Json.Decode as D
 
-main : Program D.Value Int Msg
+main : Program () Int Msg
 main =
-    Browser.element
+    Browser.sandbox
         { init = init
         , view = view
         , update = update
-        , subscriptions = \_ -> Sub.none
         }
 
-init : D.Value -> ( Int, Cmd msg )
-init flags =
-    ( Result.withDefault 0 <| D.decodeValue flagsDecoder flags
-    , Cmd.none
-    )
+init : Int
+init  =
+    0
 
-flagsDecoder : D.Decoder Int
-flagsDecoder =
-        (D.field "count" D.int)
 
 type Msg = Inc | Dec
 
-update : Msg -> Int -> (Int, Cmd msg)
+update : Msg -> Int -> Int
 update msg count =
     case msg of
-        Inc -> (count + 1, Cmd.none)
-        Dec -> (count - 1, Cmd.none)
+        Inc -> (count + 1)
+        Dec -> (count - 1)
 
 view : Int -> Html Msg
 view count =
