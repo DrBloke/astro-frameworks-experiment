@@ -3,10 +3,16 @@
 npm i
 npm start
 ```
-Attempt to get various frameworks working together in Astro
-[Astro frameworks docs](https://docs.astro.build/en/core-concepts/framework-components/)
-[Astro Elm integration docs](https://github.com/angusjf/astro-integration-elm) - see the advanced section
+The inital Elm compilation succeeds, but then an error is thrown claiming not to be able to find `components/elm/Counter.elm`
 
-Elm gets compiled by [node-elm-compiler](https://github.com/rtfeldman/node-elm-compiler)
+However, the basic Hello World example works. To see this:
 
-Can't get the more advanced Elm module to work
+in `src/pages/index.astro`
+- Uncomment lines 3 and 11
+- Comment lines 4 and 10
+- Save
+- Run `npm start`
+
+Related docs:
+- [Astro frameworks docs](https://docs.astro.build/en/core-concepts/framework-components/)
+- [Astro Elm integration docs](https://github.com/angusjf/astro-integration-elm) - see the advanced section
